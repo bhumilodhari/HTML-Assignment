@@ -154,7 +154,7 @@ img{
    
     padding: 10px 0px;
     margin: 10px 5px;
-   
+    position: relative;
     flex-grow: 1;
     overflow: auto;
     padding: 0px 0px 10px 0px;
@@ -165,7 +165,7 @@ img{
     
     padding: 10px 0px;
     margin: 10px 5px;
-   
+    
     flex-grow: 1;
     overflow: auto;
     padding: 0px 0px 10px 0px;
@@ -176,7 +176,6 @@ img{
 }
 .main-box{
     margin: 0px auto;
-    
     padding: 10px;  
 }
 
@@ -210,6 +209,11 @@ img{
      color: rgb(145,141,138) ;
      font-weight: 200;
  }
+ .common-heading-left1 {
+    display: flex;
+    align-items: center;
+}
+
  .common-heading-right button{
      width: 90px;
      height: 40px;
@@ -219,6 +223,8 @@ img{
      color: white;
      border-radius: 2px;
  }
+
+
  .common-heading-right1 button{
     width: 90px;
     height: 40px;
@@ -233,7 +239,7 @@ img{
     justify-content: space-between;
     width: 100%;
     margin: 10px 0px;
-    overflow: auto;
+    
  }
 
  .common-row1{
@@ -285,8 +291,6 @@ img{
 h5 {
     display: block;
     font-size: 0.83em;
-   
-    margin-block-end: 1.67em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
@@ -294,11 +298,13 @@ h5 {
 
 .banner{
     
-        
         padding: 5px;
         margin: 10px 5px;
         
         
+}
+.watch{
+    padding-left: 8px;
 }
 
  .banner img{
@@ -309,11 +315,23 @@ h5 {
  .btn {
     position: absolute;
     right: 0;
-    background-color: white;
-    box-shadow: rgba(177,174,174,0.45) 0px 0px 5px 1px;
-    padding: 33px 15px;
-    transform: translateY(-50%);
-    top: 50%;
+    top: calc(50% - 52px);
+    height: 75px;
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1px;
+    background: #fafafa;
+    box-shadow: 1px 1px 1px 1px rgb(0 0 0 /16%);
+    width: 30px;
+    opacity: 10px;
+    
+ }
+
+ .btn:hover{
+    background-color: rgb(153, 153, 153);
  }
 
  .left-div{
@@ -321,6 +339,24 @@ h5 {
     flex-direction: row;
  }
  
+ .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
  
 
  @media screen and (max-width:1024px) {
@@ -360,6 +396,22 @@ h5 {
     .card{
         flex-wrap: wrap;
     }
+    .mainn{
+        flex-direction: column;
+    }
+    .common-heading-left1{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .watch{
+        padding-left: 0px;
+    }
+
+    .banner img{
+        width: 100%;
+        max-width: 100%;
+    }
 
   }
 
@@ -371,6 +423,9 @@ h5 {
     .icon{
         display: none;
      }
+    .mainn{
+        flex-direction: column;
+    }
 
   }
 
@@ -384,6 +439,9 @@ h5 {
 
     .header-right a{
         margin: 0px 10px;
+    }
+    .mainn{
+        flex-direction: column;
     }
     
 
